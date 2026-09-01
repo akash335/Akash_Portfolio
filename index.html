@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Porumamilla Akash — Software Engineer</title>
+<meta name="description" content="CS undergrad at IIT Bhilai. Backend systems in FastAPI and Express, clinical ML, and adversarial machine learning research.">
+<meta property="og:title" content="Porumamilla Akash — Software Engineer">
+<meta property="og:description" content="Backend systems, clinical ML, and adversarial ML research. IIT Bhilai, class of 2027. Available January 2027.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* amber CRT phosphor on warm glass — not the default green-on-black */
+  --glass:#12100D;
+  --glass-2:#191611;
+  --rule:#2E2820;
+  --ink:#E6DAC4;
+  --ink-dim:#9A8E79;
+  --ink-faint:#6B6255;
+  --amber:#F5A623;
+  --amber-dim:#B87A1E;
+  --ok:#8FB573;
+  --mono:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --col:74ch;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+/* sticky bar is 46px; keep anchored headings clear of it */
+section[id]{scroll-margin-top:62px}
+section[id]:focus{outline:none}
+body{
+  margin:0;
+  background:var(--glass);
+  color:var(--ink);
+  font-family:var(--mono);
+  font-size:15px;
+  line-height:1.75;
+  font-weight:400;
+  /* faint scanline + vignette, barely there */
+  background-image:
+    repeating-linear-gradient(to bottom, rgba(255,255,255,.014) 0 1px, transparent 1px 3px),
+    radial-gradient(120% 80% at 50% 0%, rgba(245,166,35,.05), transparent 60%);
+}
+::selection{background:var(--amber);color:var(--glass)}
+a{color:var(--amber);text-decoration:none;border-bottom:1px solid var(--amber-dim)}
+a:hover{background:rgba(245,166,35,.12)}
+a:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+
+.wrap{max-width:var(--col);margin:0 auto;padding:0 20px}
+
+/* ---------- top bar ---------- */
+.bar{
+  position:sticky;top:0;z-index:10;
+  background:rgba(18,16,13,.93);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--rule);
+}
+.bar .wrap{display:flex;align-items:center;gap:18px;height:46px}
+.bar .tag{color:var(--ink-dim);font-size:12.5px;white-space:nowrap;flex:0 0 auto}
+.bar nav{display:flex;gap:16px;margin-left:auto;font-size:12.5px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.bar nav::-webkit-scrollbar{display:none}
+.bar nav a{color:var(--ink-dim);border:0;padding:4px 2px;white-space:nowrap}
+.bar nav a:hover{color:var(--amber);background:none}
+
+/* ---------- prompt / section heads ---------- */
+.prompt{
+  display:block;
+  color:var(--ink-faint);
+  font-size:12.5px;
+  margin:0 0 6px;
+  letter-spacing:.01em;
+}
+.prompt .u{color:var(--ok)}
+.prompt .p{color:var(--amber-dim)}
+.prompt .c{color:var(--ink)}
+section{padding:52px 0;border-top:1px solid var(--rule)}
+section:first-of-type{border-top:0}
+h2{
+  font-size:19px;font-weight:700;margin:0 0 22px;
+  letter-spacing:-.01em;
+}
+h2::before{content:"## ";color:var(--amber-dim);font-weight:400}
+
+/* ---------- hero ---------- */
+.hero{padding:64px 0 52px}
+.hero h1{
+  font-size:clamp(28px,7vw,40px);
+  line-height:1.15;font-weight:700;letter-spacing:-.02em;
+  margin:14px 0 4px;
+}
+.hero .role{color:var(--amber);font-size:clamp(15px,3.4vw,18px);font-weight:500;margin:0 0 18px}
+.hero p{max-width:66ch;margin:0 0 22px;color:var(--ink)}
+.cursor{
+  display:inline-block;width:.6em;height:1.05em;vertical-align:-.16em;
+  background:var(--amber);margin-left:2px;
+  animation:blink 1.05s steps(1) infinite;
+}
+@keyframes blink{50%{opacity:0}}
+
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.links a{
+  border:1px solid var(--rule);border-radius:3px;
+  padding:5px 11px;font-size:13px;color:var(--ink);
+  background:var(--glass-2);
+}
+.links a:hover{border-color:var(--amber-dim);color:var(--amber);background:rgba(245,166,35,.08)}
+
+/* ---------- spec table (neofetch) ---------- */
+.spec{
+  margin-top:30px;border:1px solid var(--rule);border-radius:4px;
+  background:var(--glass-2);padding:14px 16px;
+}
+.spec dl{display:grid;grid-template-columns:auto 1fr;gap:3px 18px;margin:0;font-size:13.5px}
+.spec dt{color:var(--ink-faint)}
+.spec dd{margin:0;color:var(--ink)}
+
+/* ---------- entries ---------- */
+.entry{margin-bottom:30px;padding-left:16px;border-left:1px solid var(--rule)}
+.entry:last-child{margin-bottom:0}
+.entry .sha{color:var(--amber-dim);font-size:12.5px}
+.entry h3{font-size:15.5px;font-weight:700;margin:2px 0 2px}
+.entry .meta{color:var(--ink-dim);font-size:13px;margin:0 0 10px}
+.entry ul{margin:0;padding-left:17px}
+.entry li{margin-bottom:6px;color:var(--ink)}
+.entry li::marker{color:var(--amber-dim)}
+
+/* ---------- projects ---------- */
+.proj{
+  border:1px solid var(--rule);border-radius:4px;background:var(--glass-2);
+  padding:16px 18px;margin-bottom:16px;
+}
+.proj:last-child{margin-bottom:0}
+.proj .top{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;margin-bottom:6px}
+.proj h3{font-size:15.5px;font-weight:700;margin:0}
+.proj h3::before{content:"\1F4C1  ";font-weight:400}
+.proj .when{color:var(--ink-faint);font-size:12.5px;margin-left:auto}
+.proj p{margin:0 0 10px;color:var(--ink)}
+.proj ul{margin:0 0 12px;padding-left:17px}
+.proj li{margin-bottom:5px}
+.proj li::marker{color:var(--amber-dim)}
+.stack{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
+.stack span{
+  font-size:11.5px;color:var(--ink-dim);
+  border:1px solid var(--rule);border-radius:2px;padding:1px 7px;
+}
+.proj .go{display:flex;flex-wrap:wrap;gap:14px;font-size:13px}
+.badge{
+  font-size:11px;color:var(--glass);background:var(--amber);
+  border-radius:2px;padding:1px 7px;font-weight:700;
+}
+
+/* ---------- skills ---------- */
+.skills{border:1px solid var(--rule);border-radius:4px;background:var(--glass-2);padding:14px 16px}
+.skills dl{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:0;font-size:13.5px}
+.skills dt{color:var(--amber-dim);white-space:nowrap}
+.skills dd{margin:0;color:var(--ink)}
+
+/* ---------- achievements ---------- */
+.ach{margin-bottom:16px;padding-left:16px;border-left:1px solid var(--rule)}
+.ach:last-child{margin-bottom:0}
+.ach h3{font-size:14.5px;font-weight:700;margin:0 0 2px}
+.ach p{margin:0;color:var(--ink-dim);font-size:13.5px}
+
+/* ---------- contact ---------- */
+.contact h2{margin-bottom:10px}
+.contact p{max-width:60ch;color:var(--ink)}
+
+footer{
+  border-top:1px solid var(--rule);padding:22px 0 40px;
+  color:var(--ink-faint);font-size:12.5px;
+}
+
+@media (max-width:520px){
+  .bar .tag{display:none}
+  .bar nav{margin-left:0}
+}
+@media (max-width:600px){
+  body{font-size:14px}
+  .spec dl,.skills dl{grid-template-columns:1fr;gap:2px}
+  .spec dt,.skills dt{margin-top:8px}
+  .proj .when{margin-left:0;width:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="wrap">
+    <span class="tag">akash@portfolio:~$</span>
+    <nav>
+      <a href="#about">about</a>
+      <a href="#experience">experience</a>
+      <a href="#projects">projects</a>
+      <a href="#skills">skills</a>
+      <a href="#contact">contact</a>
+    </nav>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="about" style="border-top:0">
+    <span class="prompt"><span class="u">akash@bhilai</span><span class="p">:~$</span> <span class="c" id="typed">whoami</span><span class="cursor"></span></span>
+    <h1>Porumamilla Akash</h1>
+    <p class="role">Software Engineer</p>
+    <p>
+      CS undergrad at IIT Bhilai, class of 2027. I build backend systems that hold real
+      state — a 60-endpoint clinical platform, authenticated REST services, an ML risk
+      model wired into its own serving path. Currently researching backdoor attacks on
+      code models for my final-year thesis.
+    </p>
+    <div class="links">
+      <a href="mailto:porumamillaakash@gmail.com">porumamillaakash@gmail.com</a>
+      <a href="https://github.com/akash335">github.com/akash335</a>
+      <a href="https://www.linkedin.com/in/porumamilla-akash/">linkedin</a>
+      <a href="https://leetcode.com/u/akiecod/">leetcode</a>
+    </div>
+
+    <div class="spec">
+      <span class="prompt" style="margin-bottom:10px">neofetch --profile</span>
+      <dl>
+        <dt>education</dt><dd>B.Tech CSE, IIT Bhilai</dd>
+        <dt>graduating</dt><dd>May 2027</dd>
+        <dt>location</dt><dd>Vijayawada, Andhra Pradesh, India</dd>
+        <dt>focus</dt><dd>Backend systems, applied ML, ML security</dd>
+        <dt>stack</dt><dd>FastAPI, Express, PostgreSQL, React, scikit-learn</dd>
+        <dt>leetcode</dt><dd>250+ problems solved</dd>
+        <dt>jee advanced '23</dt><dd>AIR 9,874</dd>
+        <dt>available</dt><dd>Jan – Jun 2027, full-time on-site or remote</dd>
+        <dt>seeking</dt><dd>Full-time SDE roles, or a 6-month internship with PPO conversion</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ================= EXPERIENCE ================= -->
+  <section id="experience">
+    <span class="prompt">git log --author=akash --stat</span>
+    <h2>experience</h2>
+
+    <div class="entry">
+      <span class="sha">#a3f9e21</span>
+      <h3>Application Developer &amp; QA Intern</h3>
+      <p class="meta">Dass Scientific Research Labs Pvt. Ltd. · Remote · Jun 2026 – Aug 2026</p>
+      <ul>
+        <li>Tested four cross-platform applications — DassBridge, DassMath, DassSolitaire, DassLudo — across Android devices and Windows organiser and player clients, including Google Play beta releases.</li>
+        <li>Identified and documented 18+ reproducible defects: multiplayer desync, bot takeover and seat recovery, undo state restoration, token validation, chat timestamp grouping, Android storage permissions.</li>
+        <li>Verified source-code fixes by replaying original reproduction steps across 13 defect areas, catching regressions and partial fixes — including a bot-control label that only went missing after round four.</li>
+        <li>Validated tournament XML exports and application logs against observed gameplay: event metadata, seat directions, contracts, board scores, reconnection events.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <span class="sha">#7c1b8d4</span>
+      <h3>Backend Development Intern</h3>
+      <p class="meta">Algonive · Remote · Oct 2025 – Nov 2025</p>
+      <ul>
+        <li>Built the REST backend for a multi-user team task manager in Express and PostgreSQL — 8 endpoints covering registration, login, and full task CRUD with status transitions.</li>
+        <li>Implemented JWT authentication with bcrypt password hashing and route-level middleware, enforcing per-user ownership so nobody can read or mutate another user's tasks.</li>
+        <li>Configured a CORS origin allowlist and structured error handling, then deployed the API on Render against managed PostgreSQL with the React client on Vercel.</li>
+      </ul>
+      <p style="margin:10px 0 0;font-size:13px">
+        <a href="https://github.com/akash335/Team-task-manager-Backend">backend repo</a>
+        &nbsp;·&nbsp;
+        <a href="https://github.com/akash335/Team-task-manager-Frontend">frontend repo</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section id="projects">
+    <span class="prompt">ls -la ~/projects</span>
+    <h2>projects</h2>
+
+    <article class="proj">
+      <div class="top">
+        <h3>ckd-guardian/</h3>
+        <span class="when">Feb – May 2026</span>
+      </div>
+      <p>
+        A clinical platform for chronic kidney disease: risk staging, longitudinal monitoring,
+        alerting, and doctor–patient telemedicine. Built under Prof. Avishek Adhikary at IIT Bhilai.
+      </p>
+      <ul>
+        <li>60-endpoint FastAPI backend, roughly 6,100 lines of Python, over 17 PostgreSQL tables with Alembic migrations.</li>
+        <li>Gradient Boosting classifier staging risk into four KDIGO-aligned levels from five clinical biomarkers, plus five engineered features — creatinine/eGFR ratio, BUN-to-creatinine ratio, haemoglobin deficit, age risk, and a composite severity index.</li>
+        <li>Singleton model loader so the pickle is deserialised once rather than per request, with feature engineering kept in lockstep between training and inference.</li>
+        <li>WebSocket doctor–patient chat, push notifications, medication reminders, and PDF/OCR extraction of lab reports.</li>
+        <li>Shipped to Android and iOS through Capacitor wrapping the deployed Next.js frontend.</li>
+      </ul>
+      <div class="stack">
+        <span>FastAPI</span><span>PostgreSQL</span><span>SQLAlchemy</span><span>Alembic</span>
+        <span>scikit-learn</span><span>Next.js</span><span>Capacitor</span><span>WebSockets</span>
+      </div>
+      <div class="go">
+        <a href="https://ckd-guardian.vercel.app/">live demo</a>
+        <a href="https://github.com/akash335/CKD_app">source</a>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="top">
+        <h3>backdoor-attacks-code-models/</h3>
+        <span class="badge">in progress</span>
+        <span class="when">Aug 2026 – present</span>
+      </div>
+      <p>
+        Final-year thesis. Replicating AFRAIDOOR — a dynamic backdoor attack on seq2seq code
+        models — and extending it with Sharpness-Aware Minimization to test whether flatter
+        loss minima produce more transferable, harder-to-detect backdoors.
+      </p>
+      <ul>
+        <li>Full pipeline on CodeSearchNet-Python: dataset normalisation, trigger injection, poisoned training, evaluation.</li>
+        <li>Measuring attack success rate and stealthiness against ONION and spectral-signature defenses across clean, fixed-trigger, dynamic-trigger, and SAM-augmented models.</li>
+        <li>Training grid parallelised across free-tier T4 GPUs with checkpointing to survive session limits.</li>
+      </ul>
+      <div class="stack">
+        <span>Python</span><span>PyTorch</span><span>seq2seq</span><span>adversarial ML</span>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="top">
+        <h3>akir-restaurant/</h3>
+        <span class="when">Oct 2025</span>
+      </div>
+      <p>
+        A nine-page restaurant site with a Three.js hero, backed by a small Express service
+        that handles reservations and contact submissions.
+      </p>
+      <ul>
+        <li>React and TypeScript frontend on Vite, composed from shadcn/ui primitives with a Three.js 3D hero section.</li>
+        <li>Express API delivering transactional email through the Brevo API, with automatic retry on transient failures.</li>
+        <li>Per-IP sliding-window rate limiter — 15 requests per 15 minutes — plus server-side validation guarding the public form endpoints.</li>
+      </ul>
+      <div class="stack">
+        <span>React</span><span>TypeScript</span><span>Vite</span><span>Tailwind</span>
+        <span>shadcn/ui</span><span>Three.js</span><span>Express</span>
+      </div>
+      <div class="go">
+        <a href="https://akir-restaurant.vercel.app/">live demo</a>
+        <a href="https://github.com/akash335/Web_Restaurant_frontend">frontend</a>
+        <a href="https://github.com/akash335/Web_Restaurant_backend">backend</a>
+      </div>
+    </article>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section id="skills">
+    <span class="prompt">cat skills.json</span>
+    <h2>skills</h2>
+    <div class="skills">
+      <dl>
+        <dt>languages</dt><dd>Python, C++, Java, JavaScript, TypeScript, C, SQL</dd>
+        <dt>backend</dt><dd>FastAPI, Express.js, Node.js, REST APIs, WebSockets, JWT auth, SQLAlchemy, Alembic</dd>
+        <dt>frontend</dt><dd>React, Next.js, Vite, Tailwind CSS, shadcn/ui, Three.js</dd>
+        <dt>databases</dt><dd>PostgreSQL, schema design, migrations</dd>
+        <dt>ml</dt><dd>scikit-learn, PyTorch, pandas, NumPy, gradient boosting, feature engineering</dd>
+        <dt>tools</dt><dd>Git, Docker, Postman, Linux, Capacitor, Vercel, Render</dd>
+        <dt>testing</dt><dd>functional, regression, integration, usability, cross-platform, XML/log validation</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ================= ACHIEVEMENTS ================= -->
+  <section id="achievements">
+    <span class="prompt">cat achievements.log</span>
+    <h2>achievements</h2>
+
+    <div class="ach">
+      <h3>LeetCode</h3>
+      <p>250+ problems solved — 46 dynamic programming, 32 two-pointer, 26 backtracking. <a href="https://leetcode.com/u/akiecod/">profile</a></p>
+    </div>
+    <div class="ach">
+      <h3>Graph Theory Programming Camp — AlgoUniversity</h3>
+      <p>Advanced bootcamp under a Codeforces Master mentor. Solved 17 problems across shortest paths, flows, and connectivity.</p>
+    </div>
+    <div class="ach">
+      <h3>JEE Advanced 2023</h3>
+      <p>All India Rank 9,874 among roughly 180,000 candidates.</p>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="contact">
+    <span class="prompt"><span class="u">akash@bhilai</span><span class="p">:~$</span> mail -s "hello"</span>
+    <h2>get in touch</h2>
+    <p>
+      I'm looking for a full-time software engineering role starting mid-2027, or a
+      six-month internship from January 2027 that can convert to a full-time offer.
+      My final semester is free for a full-time industrial internship, so I can start
+      in January and stay through graduation and beyond.
+    </p>
+    <p style="margin-top:14px">
+      Backend is where I'm strongest — FastAPI, Express, PostgreSQL — and I'm equally
+      interested in applied ML and ML security work. Happy to talk about anything above,
+      or to take a take-home.
+    </p>
+    <div class="links" style="margin-top:18px">
+      <a href="mailto:porumamillaakash@gmail.com">porumamillaakash@gmail.com</a>
+      <a href="tel:+919391885317">+91 93918 85317</a>
+      <a href="https://github.com/akash335">github</a>
+      <a href="https://www.linkedin.com/in/porumamilla-akash/">linkedin</a>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">built by akash · last updated september 2026</footer>
+
+<script>
+// Nav: scroll directly instead of relying on hash navigation, which sandboxed
+// iframes (and some in-app browsers) intercept as an external page load.
+(function(){
+  var bar = document.querySelector('.bar');
+  document.querySelectorAll('.bar nav a[href^="#"], a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href').slice(1);
+      var target = document.getElementById(id);
+      if(!target) return;
+      e.preventDefault();
+      var offset = (bar ? bar.offsetHeight : 46) + 16;
+      var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: top, behavior: reduce ? 'auto' : 'smooth' });
+      try { history.replaceState(null, '', '#' + id); } catch(err){}
+      target.setAttribute('tabindex','-1');
+      target.focus({ preventScroll:true });
+    });
+  });
+})();
+
+// One orchestrated moment: type the opening command, then stop.
+(function(){
+  var el = document.getElementById('typed');
+  if(!el) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var text = 'whoami';
+  if(reduce){ el.textContent = text; return; }
+  el.textContent = '';
+  var i = 0;
+  (function step(){
+    if(i <= text.length){
+      el.textContent = text.slice(0, i++);
+      setTimeout(step, 85);
+    }
+  })();
+})();
+</script>
+</body>
+</html>
