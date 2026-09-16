@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Porumamilla Akash — Software Engineer</title>
-<meta name="description" content="CS undergrad at IIT Bhilai. Backend systems in FastAPI and Express, clinical ML, and adversarial machine learning research.">
-<meta property="og:title" content="Porumamilla Akash — Software Engineer">
-<meta property="og:description" content="Backend systems, clinical ML, and adversarial ML research. IIT Bhilai, class of 2027. Available January 2027.">
+<title>Porumamilla Akash — AI/ML Engineer</title>
+<meta name="description" content="AI/ML Engineer and CS undergraduate at IIT Bhilai. Deep learning, LLM agents, applied ML, and ML security research.">
+<meta property="og:title" content="Porumamilla Akash — AI/ML Engineer">
+<meta property="og:description" content="Deep learning, LLM agents, applied ML, and adversarial ML research. IIT Bhilai, class of 2027.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -198,6 +198,7 @@ footer{
       <a href="#experience">experience</a>
       <a href="#projects">projects</a>
       <a href="#skills">skills</a>
+      <a href="#achievements">achievements</a>
       <a href="#contact">contact</a>
     </nav>
   </div>
@@ -209,12 +210,11 @@ footer{
   <section class="hero" id="about" style="border-top:0">
     <span class="prompt"><span class="u">akash@bhilai</span><span class="p">:~$</span> <span class="c" id="typed">whoami</span><span class="cursor"></span></span>
     <h1>Porumamilla Akash</h1>
-    <p class="role">Software Engineer</p>
+    <p class="role">AI/ML Engineer · Deep Learning &amp; LLM Systems</p>
     <p>
-      CS undergrad at IIT Bhilai, class of 2027. I build backend systems that hold real
-      state — a 60-endpoint clinical platform, authenticated REST services, an ML risk
-      model wired into its own serving path. Currently researching backdoor attacks on
-      code models for my final-year thesis.
+      CS undergraduate at IIT Bhilai, class of 2027. I build applied ML and LLM systems —
+      retrieval-grounded agents, evaluation harnesses, clinical ML services, and deep-learning
+      research. Currently researching backdoor attacks on code models for my final-year thesis.
     </p>
     <div class="links">
       <a href="mailto:porumamillaakash@gmail.com">porumamillaakash@gmail.com</a>
@@ -229,12 +229,13 @@ footer{
         <dt>education</dt><dd>B.Tech CSE, IIT Bhilai</dd>
         <dt>graduating</dt><dd>May 2027</dd>
         <dt>location</dt><dd>Vijayawada, Andhra Pradesh, India</dd>
-        <dt>focus</dt><dd>Backend systems, applied ML, ML security</dd>
-        <dt>stack</dt><dd>FastAPI, Express, PostgreSQL, React, scikit-learn</dd>
-        <dt>leetcode</dt><dd>250+ problems solved</dd>
+        <dt>focus</dt><dd>Deep learning, LLM agents, applied ML, ML security</dd>
+        <dt>stack</dt><dd>PyTorch, FastAPI, scikit-learn, PostgreSQL, LLM APIs</dd>
+        <dt>competitive programming</dt><dd>Codeforces Specialist (1523) · LeetCode 1690</dd>
         <dt>jee advanced '23</dt><dd>AIR 9,874</dd>
+        <dt>coursework</dt><dd>Machine Learning · Quantum Computing · DSA · OS · DBMS · CN · OOP</dd>
         <dt>available</dt><dd>Jan – Jun 2027, full-time on-site or remote</dd>
-        <dt>seeking</dt><dd>Full-time SDE roles, or a 6-month internship with PPO conversion</dd>
+        <dt>seeking</dt><dd>AI/ML, AI engineering, or software engineering internships and full-time roles</dd>
       </dl>
     </div>
   </section>
@@ -277,6 +278,32 @@ footer{
   <section id="projects">
     <span class="prompt">ls -la ~/projects</span>
     <h2>projects</h2>
+
+    <article class="proj">
+      <div class="top">
+        <h3>twitter-support-triage-agent/</h3>
+        <span class="when">Sep 2026</span>
+      </div>
+      <p>
+        Retrieval-grounded LLM agent for support-ticket triage: intent classification, grounded
+        reply drafting, deterministic escalation, and an evaluation harness.
+      </p>
+      <ul>
+        <li>Classifies support tweets into 10 data-derived intents, retrieves historical resolutions,
+            drafts grounded replies, and routes auto-handle vs. escalate in one structured LLM call.</li>
+        <li>Built a deterministic escalation guardrail that can only escalate, never de-escalate;
+            covered the routing logic with unit tests against prompt-injection scenarios.</li>
+        <li>Evaluated on 200 stratified examples with two baselines, bootstrap confidence intervals,
+            and an LLM-as-judge rubric; 74.5% auto-handling at 0.91 precision, macro-F1 0.661.</li>
+      </ul>
+      <div class="stack">
+        <span>Python</span><span>GPT-OSS 120B</span><span>scikit-learn</span>
+        <span>TF-IDF</span><span>LLM-as-judge</span><span>Guardrails</span>
+      </div>
+      <div class="go">
+        <a href="https://github.com/akash335/hiver-support-agent.git">source</a>
+      </div>
+    </article>
 
     <article class="proj">
       <div class="top">
@@ -357,12 +384,14 @@ footer{
     <h2>skills</h2>
     <div class="skills">
       <dl>
-        <dt>languages</dt><dd>Python, C++, Java, JavaScript, TypeScript, C, SQL</dd>
+        <dt>languages</dt><dd>Python, C++17, Java, JavaScript, TypeScript, C, SQL</dd>
         <dt>backend</dt><dd>FastAPI, Express.js, Node.js, REST APIs, WebSockets, JWT auth, SQLAlchemy, Alembic</dd>
         <dt>frontend</dt><dd>React, Next.js, Vite, Tailwind CSS, shadcn/ui, Three.js</dd>
-        <dt>databases</dt><dd>PostgreSQL, schema design, migrations</dd>
-        <dt>ml</dt><dd>scikit-learn, PyTorch, pandas, NumPy, gradient boosting, feature engineering</dd>
-        <dt>tools</dt><dd>Git, Docker, Postman, Linux, Capacitor, Vercel, Render</dd>
+        <dt>databases</dt><dd>PostgreSQL, MongoDB, schema design, migrations</dd>
+        <dt>ml</dt><dd>PyTorch, scikit-learn, LSTM seq2seq, gradient boosting, adversarial ML, data poisoning, pandas, NumPy</dd>
+        <dt>llm &amp; agents</dt><dd>RAG, prompt engineering, agent routing, guardrails, structured outputs, TF-IDF retrieval, LLM-as-judge, OpenAI / Anthropic / Groq APIs</dd>
+        <dt>tools</dt><dd>Git, Docker, Postman, Linux, Google Colab, Capacitor, Vercel, Render</dd>
+        <dt>coursework</dt><dd>Machine Learning, Quantum Computing, DSA, OS, DBMS, Computer Networks, OOP</dd>
         <dt>testing</dt><dd>functional, regression, integration, usability, cross-platform, XML/log validation</dd>
       </dl>
     </div>
@@ -374,8 +403,8 @@ footer{
     <h2>achievements</h2>
 
     <div class="ach">
-      <h3>LeetCode</h3>
-      <p>250+ problems solved — 46 dynamic programming, 32 two-pointer, 26 backtracking. <a href="https://leetcode.com/u/akiecod/">profile</a></p>
+      <h3>Competitive Programming</h3>
+      <p>Codeforces Specialist (1523) · LeetCode 1690 · 250+ problems solved. <a href="https://codeforces.com/profile/codeineasy">Codeforces</a> · <a href="https://leetcode.com/u/akiecod/">LeetCode</a></p>
     </div>
     <div class="ach">
       <h3>Graph Theory Programming Camp — AlgoUniversity</h3>
@@ -398,9 +427,9 @@ footer{
       in January and stay through graduation and beyond.
     </p>
     <p style="margin-top:14px">
-      Backend is where I'm strongest — FastAPI, Express, PostgreSQL — and I'm equally
-      interested in applied ML and ML security work. Happy to talk about anything above,
-      or to take a take-home.
+      My work spans deep learning, LLM agents, applied ML, and backend systems — with a focus on
+      building reliable AI systems and understanding their failure modes. Happy to talk about
+      anything above, or to take a take-home.
     </p>
     <div class="links" style="margin-top:18px">
       <a href="mailto:porumamillaakash@gmail.com">porumamillaakash@gmail.com</a>
