@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Porumamilla Akash – Software Engineer</title>
+<title>Porumamilla Akash – Software Engineer · Full-Stack &amp; AI</title>
 
 <meta name="description"
-content="Software Engineer and Computer Science undergraduate at IIT Bhilai, building full-stack software, backend systems, and AI/LLM applications. Class of 2027.">
+content="Software engineer and IIT Bhilai CSE undergraduate (class of 2027) building full-stack software, backend systems, and GenAI applications with RAG and LangGraph agents.">
 
 <meta property="og:title"
 content="Porumamilla Akash – Software Engineer">
 
 <meta property="og:description"
-content="Software Engineer and IIT Bhilai CSE undergraduate with experience in backend systems, React, Python, JavaScript, AI/LLM applications, testing, and deployment. Class of 2027.">
+content="Full-stack and GenAI engineer: FastAPI, Express, React, PostgreSQL, RAG, LangGraph agents, and CI-backed deployment. IIT Bhilai CSE, class of 2027.">
 
 <meta property="og:type" content="website">
 
@@ -562,9 +562,9 @@ footer{
 
     <p>
       Computer Science undergraduate at IIT Bhilai, class of 2027.
-      I build full-stack software and backend systems using Python,
-      JavaScript/TypeScript, React, FastAPI, Express, and PostgreSQL,
-      with additional experience building and deploying AI/LLM applications.
+      I build full-stack software end to end: FastAPI and Express backends,
+      React and Next.js frontends, PostgreSQL schemas, and GenAI systems with
+      retrieval-augmented generation and LangGraph agent workflows, deployed with CI.
     </p>
 
     <div class="links">
@@ -603,25 +603,25 @@ footer{
         <dd>Vijayawada, Andhra Pradesh, India</dd>
 
         <dt>focus</dt>
-        <dd>Software engineering, backend systems, full-stack development, AI/LLM applications</dd>
+        <dd>Full-stack software engineering, backend systems, GenAI and agent applications</dd>
 
         <dt>stack</dt>
-        <dd>Python, C++17, React, TypeScript, FastAPI, Express, PostgreSQL</dd>
+        <dd>Python, C++17, TypeScript, React, FastAPI, Express, PostgreSQL, LangGraph</dd>
 
-        <dt>competitive programming</dt>
-        <dd>Codeforces Specialist (1572) · LeetCode 1690</dd>
+        <dt>leetcode</dt>
+        <dd>300+ problems solved · contest rating 1,690</dd>
 
         <dt>jee advanced '23</dt>
         <dd>AIR 9,874</dd>
 
         <dt>coursework</dt>
-        <dd>DSA · OS · DBMS · CN · OOP · Machine Learning · Quantum Computing</dd>
+        <dd>DSA · OOP · OS · DBMS · CN · Compiler Design · Machine Learning · Quantum Computing</dd>
 
         <dt>available</dt>
-        <dd>Jan – Jun 2027 · Full-time internship</dd>
+        <dd>From January 2027</dd>
 
         <dt>seeking</dt>
-        <dd>Software Engineering and SDE internship opportunities</dd>
+        <dd>Full-time SDE and AI engineering roles, or a 6-month internship with PPO conversion</dd>
 
       </dl>
 
@@ -689,7 +689,7 @@ footer{
       <span class="sha">#7c1b8d4</span>
 
       <h3>
-        Backend Development Intern
+        Web Development Intern
       </h3>
 
       <p class="meta">
@@ -818,6 +818,71 @@ footer{
     </article>
 
 
+    <!-- SUPPORT TRIAGE AGENT -->
+
+    <article class="proj">
+
+      <div class="top">
+
+        <h3>
+          support-triage-agent/
+        </h3>
+
+        <span class="when">
+          Sep 2026
+        </span>
+
+      </div>
+
+      <p>
+        Retrieval-grounded LLM agent for support-ticket triage with intent
+        classification, grounded reply drafting, deterministic escalation,
+        and evaluation.
+      </p>
+
+      <ul>
+
+        <li>
+          Classified support tweets into 10 data-derived intents, retrieved
+          historical resolutions, drafted grounded replies, and routed
+          auto-handle versus escalation in a structured LLM workflow.
+        </li>
+
+        <li>
+          Designed deterministic escalation guardrails that prevent
+          prompt-injected customer messages from bypassing safety decisions.
+        </li>
+
+        <li>
+          Built a 200-example stratified evaluation set with two baselines,
+          bootstrap confidence intervals, and LLM-as-judge evaluation;
+          achieved 74.5% auto-handling at 0.91 precision.
+        </li>
+
+      </ul>
+
+      <div class="stack">
+
+        <span>Python</span>
+        <span>GPT-OSS 120B</span>
+        <span>scikit-learn</span>
+        <span>TF-IDF</span>
+        <span>LLM-as-judge</span>
+        <span>Guardrails</span>
+
+      </div>
+
+      <div class="go">
+
+        <a href="https://github.com/akash335/hiver-support-agent">
+          source
+        </a>
+
+      </div>
+
+    </article>
+
+
     <!-- CKD -->
 
     <article class="proj">
@@ -886,6 +951,94 @@ footer{
           source
         </a>
 
+      </div>
+
+    </article>
+
+
+    <!-- THESIS -->
+
+    <article class="proj">
+
+      <div class="top">
+        <h3>backdoor-attacks-code-models/</h3>
+        <span class="badge">in progress</span>
+        <span class="when">Aug 2026 – present</span>
+      </div>
+
+      <p>
+        Final-year B.Tech thesis at IIT Bhilai: a replication of AFRAIDOOR
+        (IEEE TSE 2024), a data-poisoning backdoor attack on neural code models.
+      </p>
+
+      <ul>
+        <li>
+          Reproduced fixed, grammar-sampled, and adaptive gradient-based trigger
+          attacks on an LSTM sequence-to-sequence model trained on CodeSearchNet-Python;
+          the fixed and grammar triggers reached 98.1% and 96.5% attack success at
+          10% poisoning while clean-task F1 held steady.
+        </li>
+        <li>
+          Fixed 9 blocking defects in the upstream research code, including an encoder
+          architecture mismatch between the training and attack code paths and breaking
+          API changes in PyTorch and tree-sitter.
+        </li>
+        <li>
+          Cut adaptive trigger generation from 140 to 5.4 seconds per batch (26x faster)
+          by measuring the true maximum identifier count and correcting an over-provisioned
+          hyperparameter, with no loss of coverage.
+        </li>
+      </ul>
+
+      <div class="stack">
+        <span>Python</span>
+        <span>PyTorch</span>
+        <span>seq2seq</span>
+        <span>tree-sitter</span>
+        <span>adversarial ML</span>
+      </div>
+
+    </article>
+
+
+    <!-- SHIPMENT PIPELINE -->
+
+    <article class="proj">
+
+      <div class="top">
+        <h3>shipment-analytics-pipeline/</h3>
+        <span class="when">Sep 2026</span>
+      </div>
+
+      <p>
+        End-to-end batch data pipeline from PostgreSQL through PySpark and dbt,
+        orchestrated by Airflow and validated in CI.
+      </p>
+
+      <ul>
+        <li>
+          Moved 500,000 synthetic shipment records from PostgreSQL into partitioned
+          Parquet with PySpark, using broadcast joins against three dimension tables
+          and window functions for per-customer sequencing.
+        </li>
+        <li>
+          Modelled the warehouse layer in dbt across 6 models with 11 schema tests,
+          orchestrated Spark, dbt run, and dbt test as a 3-task Airflow DAG, and added
+          GitHub Actions CI on every push.
+        </li>
+      </ul>
+
+      <div class="stack">
+        <span>PySpark</span>
+        <span>Airflow</span>
+        <span>dbt</span>
+        <span>Parquet</span>
+        <span>PostgreSQL</span>
+        <span>GitHub Actions</span>
+      </div>
+
+      <div class="go">
+        <a href="https://github.com/akash335/Shipment-Analytics-Pipeline">source</a>
       </div>
 
     </article>
@@ -963,71 +1116,6 @@ footer{
     </article>
 
 
-    <!-- TWITTER SUPPORT -->
-
-    <article class="proj">
-
-      <div class="top">
-
-        <h3>
-          twitter-support-triage-agent/
-        </h3>
-
-        <span class="when">
-          Sep 2026
-        </span>
-
-      </div>
-
-      <p>
-        Retrieval-grounded LLM agent for support-ticket triage with intent
-        classification, grounded reply drafting, deterministic escalation,
-        and evaluation.
-      </p>
-
-      <ul>
-
-        <li>
-          Classified support tweets into 10 data-derived intents, retrieved
-          historical resolutions, drafted grounded replies, and routed
-          auto-handle versus escalation in a structured LLM workflow.
-        </li>
-
-        <li>
-          Designed deterministic escalation guardrails that prevent
-          prompt-injected customer messages from bypassing safety decisions.
-        </li>
-
-        <li>
-          Built a 200-example stratified evaluation set with two baselines,
-          bootstrap confidence intervals, and LLM-as-judge evaluation;
-          achieved 74.5% auto-handling at 0.91 precision.
-        </li>
-
-      </ul>
-
-      <div class="stack">
-
-        <span>Python</span>
-        <span>GPT-OSS 120B</span>
-        <span>scikit-learn</span>
-        <span>TF-IDF</span>
-        <span>LLM-as-judge</span>
-        <span>Guardrails</span>
-
-      </div>
-
-      <div class="go">
-
-        <a href="https://github.com/akash335/hiver-support-agent.git">
-          source
-        </a>
-
-      </div>
-
-    </article>
-
-
   </section>
 
 
@@ -1063,7 +1151,7 @@ footer{
 
         <dt>databases</dt>
         <dd>
-          PostgreSQL, MongoDB, schema design, migrations
+          PostgreSQL, schema design, indexing, Alembic migrations
         </dd>
 
         <dt>ai / ml</dt>
@@ -1076,18 +1164,23 @@ footer{
         <dd>
           RAG, LangGraph, prompt engineering, agent routing, guardrails,
           structured outputs, FAISS, FastEmbed, LLM-as-judge,
-          OpenAI / Anthropic / Groq APIs
+          OpenAI and Groq APIs
+        </dd>
+
+        <dt>data</dt>
+        <dd>
+          PySpark, Apache Airflow, dbt, Parquet, pandas
         </dd>
 
         <dt>tools</dt>
         <dd>
-          Git, Docker, Postman, Linux, Google Colab, Capacitor, Vercel, Render
+          Git, Docker, GitHub Actions CI, Postman, Linux, Google Colab, Capacitor, Vercel, Render
         </dd>
 
         <dt>coursework</dt>
         <dd>
-          DSA, Operating Systems, DBMS, Computer Networks,
-          OOP, Machine Learning, Quantum Computing
+          DSA, OOP, Operating Systems, DBMS, Computer Networks,
+          Compiler Design, Machine Learning, Quantum Computing
         </dd>
 
         <dt>testing</dt>
@@ -1117,19 +1210,13 @@ footer{
     <div class="ach">
 
       <h3>
-        Competitive Programming
+        LeetCode
       </h3>
 
       <p>
-        Active on Codeforces · LeetCode 1690 ·
-        300+ problems solved.
-        <a href="https://codeforces.com/profile/life_with_code">
-          Codeforces
-        </a>
-        ·
-        <a href="https://leetcode.com/u/akiecod/">
-          LeetCode
-        </a>
+        300+ data structures and algorithms problems solved, including 58 dynamic
+        programming problems; contest rating 1,690.
+        <a href="https://leetcode.com/u/akiecod/">profile</a>
       </p>
 
     </div>
@@ -1179,9 +1266,9 @@ footer{
     </h2>
 
     <p>
-      I'm looking for a six-month software engineering internship
-      from January 2027, with the opportunity to contribute to
-      production software and grow into a full-time engineering role.
+      I'm looking for a full-time software engineering or AI engineering
+      role, or a six-month internship from January 2027 that can convert
+      to a full-time offer.
     </p>
 
     <p style="margin-top:14px">
